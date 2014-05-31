@@ -5,6 +5,7 @@ Swiss is my attempt to help the user easily lay out markdown content to a magazi
 ## What the end-user would be able to see/do?
 
 The workflow for the end-user will be: 
+
 1. Select the layout per page
 1. Insert and size the media content into the layout
 
