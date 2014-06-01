@@ -5,7 +5,8 @@ var app = express();
 var file = require("fs");
 
 app.use(logfmt.requestLogger());
-
+app.engine('html', require('ejs').renderFile);
+app.use(express.static(__dirname + '/webapp/js'));
 function dir_list(cb) {
   var sys = require('sys');
   var exec = require('child_process').exec
@@ -20,7 +21,11 @@ function dir_list(cb) {
   );
 }
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
+  res.render('index.html');
+});
+
+app.get('/phantom', function(req, res){
   var obj = {a: 1, b: 2};
   var contents = file.writeFileSync("./output.json",JSON.stringify(obj));
   dir_list(function(dir_list_output) {
