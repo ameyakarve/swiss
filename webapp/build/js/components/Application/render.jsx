@@ -6,7 +6,7 @@ module.exports = function() {
       </div>
       <div className="row">
         <div className="col-md-3">
-          <Leftpane/>
+          <Leftpane data={this.state.pages}/>
         </div>
         <div className="col-md-9">
           <Rightpane/>
