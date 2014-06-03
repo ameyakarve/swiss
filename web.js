@@ -6,7 +6,7 @@ var file = require("fs");
 
 app.use(logfmt.requestLogger());
 app.engine('html', require('ejs').renderFile);
-app.use(express.static(__dirname + '/webapp/js'));
+app.use(express.static(__dirname + '/webapp/dist'));
 function dir_list(cb) {
   var sys = require('sys');
   var exec = require('child_process').exec
